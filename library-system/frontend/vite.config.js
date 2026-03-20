@@ -11,6 +11,8 @@ export default defineConfig({
   },
   server: {
     port: 5173,
+    host: true,  // <- 允許外部訪問
+    allowedHosts: 'all',  // <- 允許所有主機訪問
     proxy: {
       '/api': {
         target: 'http://localhost:8083',
